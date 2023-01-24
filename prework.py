@@ -63,58 +63,19 @@ print(is_leap_year(2015))
 #Question 5:
 #Write a function to check to see if all numbers in list are consecutive numbers.                                        For example, [2,3,4,5,6,7] are consecutive numbers, but [1,2,4,5] are not                                         consecutive numbers. The return should be boolean Type.
 
-def is_consecutive(a_list):
-    """Return true if all numbers in list are consecutive otherwise false """
-# The sort function sorts the list so its in consecutive order. Once the list is                                       sorted THEN you can check to see if the original list is in order/matches the                                          sorted list
-#     for num in a_list:
-#         sorted_a_list.append(num+1)
-#     sorted_a_list.sort()
-#     if sorted_a_list == a_list:
-#         return True
-#     else:
-#         return False
-# sorted_a_list = []
-# a_list = [1,2,5]
-# print(is_consecutive(a_list))
-
-# The first number in the original list is needed in the new list if you can use that number and add 1 somehow THEN compare the lists 
-
-# def is_consecutive(a_list):
-#     for num in a_list:
-#         sorted_a_list.append(num)
-
-#     x = len(sorted_a_list)
-#     for n in sorted_a_list:
-#         sorted_a_list.pop()
-#     for x in sorted_a_list:
-#         sorted_a_list.append(n +1)
-#         if sorted_a_list == [-1]:
-#             break
-#     return x
-
-# sorted_a_list = []
-# a_list = [1,2,5]
-# print(is_consecutive(a_list))
-# print(x)
-
-def is_consecutive(a_list):
-    for num in a_list:
-        sorted_a_list.append(num)
-
-    x = len(sorted_a_list)
-    for n in sorted_a_list:
-        sorted_a_list.pop()
-        sorted_a_list.append(n + 1)
-        if x == len(a_list):
-            break
 
    
+# The sort function sorts the list so its in consecutive order. Once the list is                                       sorted THEN you can check to see if the original list is in order/matches the                                          sorted list
+
+def is_consecutive(a_list):
+    """Return true if all numbers in list are consecutive otherwise false """
+    pointer = a_list[0]
+    for num in a_list:
+        if pointer == num:
+            pointer += 1
+        else:
+            return False
+    return True
     
-
-sorted_a_list = []
-a_list = [1,2,5]
-print(is_consecutive(a_list))
-print(is_consecutive(sorted_a_list))
-
-
-
+a_list = [2,3,4,5,6,7]
+print(is_consecutive(a_list)) 
